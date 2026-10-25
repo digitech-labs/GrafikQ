@@ -63,26 +63,19 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <button type="button" id="btn-all-auto" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-50/90 hover:bg-blue-100 border border-blue-200 text-blue-800 flex items-center gap-1.5 transition cursor-pointer active:scale-95 shadow-sm">
-          <span id="icon-wand"></span>
-          <span>Semua AI</span>
-        </button>
-        <button type="button" id="btn-randomize" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-50/90 hover:bg-indigo-100 border border-indigo-200 text-indigo-800 flex items-center gap-1.5 transition cursor-pointer active:scale-95 shadow-sm">
-          <span id="icon-dice"></span>
-          <span>Acak Menu</span>
-        </button>
+        <span class="text-[11px] font-semibold text-slate-500 hidden sm:inline">Studio Visual & Analisis Pakar 4K</span>
       </div>
     </header>
 
-    <!-- TOP ROW: TOPIC INPUT | FORMAT MATERI | SEMUA AI & ACAK MENU -->
+    <!-- TOP ROW: 1. TOPIC INPUT | 2. FORMAT MATERI | 3. SEMUA AI & ACAK MENU -->
     <div id="top-row-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 items-stretch">
-      <!-- 1. TOPIC INPUT (COL 7) -->
-      <section id="input-section" class="lg:col-span-7 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 relative overflow-visible z-30 flex flex-col justify-between">
+      <!-- 1. MENU MENULIS ATAU INPUT FOTO MATERI (COL 6) -->
+      <section id="input-section" class="lg:col-span-6 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 relative overflow-visible z-30 flex flex-col justify-between">
         <div>
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
             <label for="main-topic-input" class="flex items-center gap-1.5 text-xs font-bold text-slate-800">
               <span id="icon-book" class="text-blue-600"></span>
-              <span>Topik Materi / Foto Referensi</span>
+              <span>1. Topik Materi / Foto Referensi</span>
             </label>
 
             <div class="flex items-center gap-1.5">
@@ -150,16 +143,37 @@
         </div>
       </section>
 
-      <!-- 2. FORMAT MATERI (COL 5) -->
-      <section id="format-section" class="lg:col-span-5 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 flex flex-col justify-between">
+      <!-- 2. MENU FORMAT MATERI (COL 3) -->
+      <section id="format-section" class="lg:col-span-3 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 flex flex-col justify-between">
         <div>
           <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
             <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-sm shrink-0" id="icon-format-box"></div>
-            <h3 class="text-xs font-bold text-slate-800 truncate">Format Materi</h3>
+            <h3 class="text-xs font-bold text-slate-800 truncate">2. Format Materi</h3>
           </div>
           <div id="format-buttons-grid" class="grid grid-cols-2 gap-2"></div>
         </div>
-        <p class="text-[9px] text-slate-400 font-normal mt-2 leading-tight">Pilih poin dinamis atau narasi.</p>
+        <p class="text-[9px] text-slate-400 font-normal mt-2 leading-tight">Pilih poin dinamis atau narasi esai.</p>
+      </section>
+
+      <!-- 3. MENU PILIHAN SEMUA AI DAN ACAK MENU (COL 3) -->
+      <section id="quick-mode-section" class="lg:col-span-3 rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-sm shrink-0" id="icon-mode-box"></div>
+            <h3 class="text-xs font-bold text-slate-800 truncate">3. Pilihan Menu Otomatis</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" id="btn-all-auto" class="p-2 rounded-xl border border-blue-200 bg-blue-50/90 hover:bg-blue-600 text-blue-800 hover:text-white flex flex-col items-center justify-center gap-1 transition cursor-pointer active:scale-95 shadow-sm group">
+              <div class="w-5 h-5 rounded bg-blue-600 group-hover:bg-white/25 text-white flex items-center justify-center shrink-0" id="icon-wand"></div>
+              <span class="text-[10px] font-bold leading-tight">Semua AI</span>
+            </button>
+            <button type="button" id="btn-randomize" class="p-2 rounded-xl border border-indigo-200 bg-indigo-50/90 hover:bg-indigo-600 text-indigo-800 hover:text-white flex flex-col items-center justify-center gap-1 transition cursor-pointer active:scale-95 shadow-sm group">
+              <div class="w-5 h-5 rounded bg-indigo-600 group-hover:bg-white/25 text-white flex items-center justify-center shrink-0" id="icon-dice"></div>
+              <span class="text-[10px] font-bold leading-tight">Acak Menu</span>
+            </button>
+          </div>
+        </div>
+        <p class="text-[9px] text-slate-400 font-normal mt-2 leading-tight">Atur semua ke AI atau acak kombinasi.</p>
       </section>
     </div>
 
@@ -608,6 +622,9 @@
       document.getElementById('icon-clear-x').innerHTML = '✕';
       document.getElementById('icon-award').innerHTML = SVG_ICONS.award;
       document.getElementById('icon-format-box').innerHTML = SVG_ICONS.chart;
+      if (document.getElementById('icon-mode-box')) {
+        document.getElementById('icon-mode-box').innerHTML = SVG_ICONS.sparkles;
+      }
       document.getElementById('btn-generate-icon').innerHTML = SVG_ICONS.zap;
 
       function syncPresetsToStorage() {
@@ -673,12 +690,21 @@
             state.aspectRatio = preset.aspectRatio || 'auto';
             state.variantCount = preset.variantCount || 2;
             state.contentFormat = preset.contentFormat || 'smart_points';
-            state.watermarkEnabled = Boolean(preset.watermarkEnabled);
-            state.watermarkText = preset.watermarkText || '';
-            state.watermarkPosition = preset.watermarkPosition || 'top-left';
-            state.sosmedEnabled = Boolean(preset.sosmedEnabled);
-            state.sosmedPosition = preset.sosmedPosition || 'bottom-center';
-            state.sosmedAccounts = Object.assign({ ig: '', tiktok: '', yt: '', fb: '', wa: '', web: '' }, preset.sosmedAccounts || {});
+
+            // Jika Watermark tidak dikunci, ikuti preset; jika dikunci, pertahankan teks yang dikunci
+            if (!state.watermarkLocked) {
+              state.watermarkEnabled = Boolean(preset.watermarkEnabled);
+              state.watermarkText = preset.watermarkText || '';
+              state.watermarkPosition = preset.watermarkPosition || 'top-left';
+            }
+
+            // Jika Sosmed tidak dikunci, ikuti preset; jika dikunci, pertahankan akun sosmed yang dikunci
+            if (!state.sosmedLocked) {
+              state.sosmedEnabled = Boolean(preset.sosmedEnabled);
+              state.sosmedPosition = preset.sosmedPosition || 'bottom-center';
+              state.sosmedAccounts = Object.assign({ ig: '', tiktok: '', yt: '', fb: '', wa: '', web: '' }, preset.sosmedAccounts || {});
+            }
+
             state.activePresetId = preset.id;
 
             renderAllParameterMenus();
@@ -822,7 +848,7 @@
         const container = document.getElementById('watermark-sosmed-grid');
         container.innerHTML = '';
 
-        // 1. KARTU WATERMARK KAPSUL
+        // 1. KARTU WATERMARK KAPSUL (DENGAN SISTEM KUNCI & BEBAS UBAH)
         const wmCard = document.createElement('div');
         wmCard.className = 'rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 flex flex-col justify-between transition-all duration-300 h-full';
         const isWmActive = Boolean(state.watermarkEnabled && state.watermarkText.trim().length > 0);
@@ -838,34 +864,36 @@
                 </div>
                 <div class="min-w-0">
                   <h3 class="text-[11px] font-bold text-slate-900 leading-tight truncate">Watermark Kapsul</h3>
-                  <p class="text-[9px] text-slate-400 font-normal leading-tight truncate">Teks otomatis tersimpan (Kunci)</p>
+                  <p class="text-[9px] text-slate-400 font-normal leading-tight truncate">Tersimpan otomatis & bebas diubah kapan saja</p>
                 </div>
               </label>
               
               <div class="flex items-center gap-1.5 shrink-0">
-                <button type="button" id="btn-lock-wm" class="p-1 rounded-lg border text-[10px] font-semibold flex items-center gap-1 transition ${state.watermarkLocked ? 'bg-amber-50 text-amber-700 border-amber-300' : 'bg-slate-100 text-slate-600 border-slate-300'}" title="${state.watermarkLocked ? 'Terkunci permanen' : 'Terbuka'}">
+                <button type="button" id="btn-lock-wm" class="px-2 py-0.5 rounded-lg border text-[9px] font-bold flex items-center gap-1 transition cursor-pointer ${state.watermarkLocked ? 'bg-amber-50 text-amber-800 border-amber-300 shadow-sm' : 'bg-slate-100 text-slate-600 border-slate-300'}" title="${state.watermarkLocked ? 'Nama Watermark Dikunci (Tersimpan Otomatis)' : 'Klik untuk mengunci Watermark'}">
                   ${state.watermarkLocked ? SVG_ICONS.lock : SVG_ICONS.unlock}
+                  <span>${state.watermarkLocked ? 'Terkunci' : 'Kunci'}</span>
                 </button>
                 <span id="wm-status-badge" class="text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
                   isWmActive ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
                 }">
-                  ${isWmActive ? 'Aktif' : 'Nonaktif'}
+                  ${isWmActive ? 'Aktif: ' + wmPosLabel : 'Nonaktif'}
                 </span>
               </div>
             </div>
 
             <div class="space-y-2.5">
               <div>
-                <label for="input-wm-text" class="block text-[9px] font-bold text-slate-600 mb-1">Teks Watermark Tersimpan:</label>
+                <label for="input-wm-text" class="block text-[9px] font-bold text-slate-600 mb-1">Kolom Teks Watermark (Bebas Diedit & Otomatis Tersimpan):</label>
                 <div class="flex items-center bg-white rounded-xl border-2 border-slate-300 focus-within:border-blue-600 px-2.5 py-1.5 shadow-inner transition">
                   <span class="text-blue-600 mr-1.5 shrink-0">${SVG_ICONS.stamp}</span>
                   <input
                     type="text"
                     id="input-wm-text"
                     value="${state.watermarkText.replace(/"/g, '&quot;')}"
-                    placeholder="Ketik teks watermark..."
+                    placeholder="Ketik teks watermark di sini..."
                     class="w-full bg-transparent text-[11px] font-semibold text-slate-900 placeholder-slate-400 focus:outline-none"
                   />
+                  <button type="button" id="btn-clear-wm" class="${state.watermarkText ? '' : 'hidden'} text-slate-400 hover:text-rose-600 ml-1 text-xs font-bold cursor-pointer" title="Bersihkan teks">✕</button>
                 </div>
               </div>
 
@@ -875,6 +903,7 @@
               </div>
             </div>
           </div>
+          <p class="text-[9px] text-slate-400 font-normal mt-2 leading-tight">Saat dikunci, teks tidak perlu diketik ulang & tetap bebas diubah.</p>
         `;
 
         const wmPosGrid = wmCard.querySelector('#wm-positions-grid');
@@ -882,7 +911,7 @@
           const isPosSelected = state.watermarkPosition === pos.id;
           const posBtn = document.createElement('button');
           posBtn.type = 'button';
-          posBtn.className = `py-1 px-1 rounded-lg border text-[9px] font-bold transition cursor-pointer text-center truncate ${
+          posBtn.className = `py-1.5 px-1.5 rounded-lg border text-[9px] font-bold transition cursor-pointer text-center truncate ${
             isPosSelected
               ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-600 shadow-sm'
               : 'bg-slate-50 hover:bg-white text-slate-700 border-slate-200 hover:border-blue-300'
@@ -898,8 +927,18 @@
 
         const chkWm = wmCard.querySelector('#chk-wm-enable');
         const inpWm = wmCard.querySelector('#input-wm-text');
+        const clrWm = wmCard.querySelector('#btn-clear-wm');
         const btnLockWm = wmCard.querySelector('#btn-lock-wm');
         const badgeWm = wmCard.querySelector('#wm-status-badge');
+
+        const refreshWmBadge = () => {
+          const activeNow = Boolean(state.watermarkEnabled && state.watermarkText.trim().length > 0);
+          const lbl = WATERMARK_POSITIONS.find((p) => p.id === state.watermarkPosition)?.label || 'Bawah Kanan';
+          badgeWm.className = `text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
+            activeNow ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
+          }`;
+          badgeWm.textContent = activeNow ? 'Aktif: ' + lbl : 'Nonaktif';
+        };
 
         chkWm.onchange = (e) => {
           state.watermarkEnabled = e.target.checked;
@@ -909,31 +948,33 @@
 
         inpWm.oninput = (e) => {
           state.watermarkText = e.target.value;
+          if (state.watermarkText.trim().length > 0 && !state.watermarkEnabled) {
+            state.watermarkEnabled = true;
+            chkWm.checked = true;
+          }
+          clrWm.classList.toggle('hidden', !state.watermarkText);
           persistLocks();
-          badgeWm.className = `text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
-            state.watermarkEnabled && state.watermarkText.trim().length > 0 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
-          }`;
-          badgeWm.textContent = state.watermarkEnabled && state.watermarkText.trim().length > 0 ? 'Aktif' : 'Nonaktif';
+          refreshWmBadge();
+        };
+
+        clrWm.onclick = () => {
+          state.watermarkText = '';
+          inpWm.value = '';
+          clrWm.classList.add('hidden');
+          persistLocks();
+          refreshWmBadge();
         };
 
         btnLockWm.onclick = () => {
           state.watermarkLocked = !state.watermarkLocked;
           persistLocks();
           renderWatermarkAndSosmedCards();
-          showPresetToast(state.watermarkLocked ? 'Watermark dikunci permanen!' : 'Watermark dibuka.');
-        };
-
-        const refreshWmBadge = () => {
-          const activeNow = Boolean(state.watermarkEnabled && state.watermarkText.trim().length > 0);
-          badgeWm.className = `text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
-            activeNow ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
-          }`;
-          badgeWm.textContent = activeNow ? 'Aktif' : 'Nonaktif';
+          showPresetToast(state.watermarkLocked ? 'Nama Watermark dikunci & disimpan otomatis!' : 'Kunci Watermark dibuka.');
         };
 
         container.appendChild(wmCard);
 
-        // 2. KARTU KAPSUL SOSIAL MEDIA
+        // 2. KARTU KAPSUL SOSIAL MEDIA (DENGAN SISTEM KUNCI + FITUR NAMA SAMA SEMUA)
         const sosCard = document.createElement('div');
         sosCard.className = 'rounded-2xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-sm p-3.5 flex flex-col justify-between transition-all duration-300 h-full';
         const mergedGroups = groupIdenticalSocialAccounts(state.sosmedAccounts);
@@ -950,24 +991,34 @@
                 </div>
                 <div class="min-w-0">
                   <h3 class="text-[11px] font-bold text-slate-900 leading-tight truncate">Kapsul Sosial Media</h3>
-                  <p class="text-[9px] text-slate-400 font-normal leading-tight truncate">Akun sosmed tersimpan (Kunci)</p>
+                  <p class="text-[9px] text-slate-400 font-normal leading-tight truncate">Tersimpan otomatis & bebas diubah</p>
                 </div>
               </label>
 
               <div class="flex items-center gap-1.5 shrink-0">
-                <button type="button" id="btn-lock-sos" class="p-1 rounded-lg border text-[10px] font-semibold flex items-center gap-1 transition ${state.sosmedLocked ? 'bg-amber-50 text-amber-700 border-amber-300' : 'bg-slate-100 text-slate-600 border-slate-300'}" title="${state.sosmedLocked ? 'Sosmed dikunci permanen' : 'Terbuka'}">
+                <button type="button" id="btn-lock-sos" class="px-2 py-0.5 rounded-lg border text-[9px] font-bold flex items-center gap-1 transition cursor-pointer ${state.sosmedLocked ? 'bg-amber-50 text-amber-800 border-amber-300 shadow-sm' : 'bg-slate-100 text-slate-600 border-slate-300'}" title="${state.sosmedLocked ? 'Nama Sosmed Dikunci (Tersimpan Otomatis)' : 'Klik untuk mengunci Sosmed'}">
                   ${state.sosmedLocked ? SVG_ICONS.lock : SVG_ICONS.unlock}
+                  <span>${state.sosmedLocked ? 'Terkunci' : 'Kunci'}</span>
                 </button>
                 <span id="sos-status-badge" class="text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
                   isSosActive ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
                 }">
-                  ${isSosActive ? 'Aktif' : 'Nonaktif'}
+                  ${isSosActive ? 'Aktif: ' + sosPosLabel : 'Nonaktif'}
                 </span>
               </div>
             </div>
 
-            <div class="text-[9px] font-bold text-slate-600 mb-1">Nama Akun Sosial Media Tersimpan:</div>
+            <div class="flex items-center justify-between gap-1.5 bg-pink-50/80 border border-pink-200/80 rounded-xl px-2.5 py-1 mb-2">
+              <span class="text-[9px] font-medium text-pink-900 truncate">💡 Nama sama otomatis dilebur jadi 1 baris.</span>
+              <button type="button" id="btn-sync-sosmed" class="px-2 py-0.5 rounded-lg bg-white hover:bg-pink-600 text-pink-700 hover:text-white border border-pink-300 text-[9px] font-bold transition cursor-pointer shrink-0 shadow-sm">
+                Samakan Nama Semua
+              </button>
+            </div>
+
+            <div class="text-[9px] font-bold text-slate-600 mb-1">Kolom Nama Akun Sosial Media (Bebas Diedit):</div>
             <div id="sosmed-inputs-grid" class="grid grid-cols-2 gap-1.5 mb-2"></div>
+
+            <div id="sosmed-preview-bar" class="${mergedGroups.length > 0 ? '' : 'hidden'} mb-2 p-1.5 rounded-xl bg-slate-900 text-white flex flex-wrap items-center gap-1.5"></div>
 
             <div>
               <div class="text-[9px] font-semibold text-slate-500 mb-1">Posisi Kapsul Sosmed:</div>
@@ -977,6 +1028,7 @@
         `;
 
         const sosInputsGrid = sosCard.querySelector('#sosmed-inputs-grid');
+        const sosPreviewBar = sosCard.querySelector('#sosmed-preview-bar');
         const chkSos = sosCard.querySelector('#chk-sos-enable');
         const btnLockSos = sosCard.querySelector('#btn-lock-sos');
         const badgeSos = sosCard.querySelector('#sos-status-badge');
@@ -984,10 +1036,24 @@
         const refreshSosmedBadge = () => {
           const groupsNow = groupIdenticalSocialAccounts(state.sosmedAccounts);
           const activeNow = Boolean(state.sosmedEnabled && groupsNow.length > 0);
+          const lbl = WATERMARK_POSITIONS.find((p) => p.id === state.sosmedPosition)?.label || 'Bawah Tengah';
           badgeSos.className = `text-[9px] font-semibold px-2 py-0.5 rounded-full border ${
             activeNow ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-slate-100 text-slate-500 border-slate-200'
           }`;
-          badgeSos.textContent = activeNow ? 'Aktif' : 'Nonaktif';
+          badgeSos.textContent = activeNow ? 'Aktif: ' + lbl : 'Nonaktif';
+
+          if (groupsNow.length > 0) {
+            sosPreviewBar.classList.remove('hidden');
+            sosPreviewBar.innerHTML = groupsNow.map((grp) => `
+              <div class="inline-flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-full border border-white/25">
+                ${grp.platforms.map((p) => `<span class="px-1 py-0.2 rounded-full text-[8px] font-extrabold text-white" style="background-color:${p.color}">${p.id.toUpperCase()}</span>`).join('')}
+                <span class="text-[9px] font-bold text-white">${grp.displayHandle}</span>
+              </div>
+            `).join('');
+          } else {
+            sosPreviewBar.classList.add('hidden');
+            sosPreviewBar.innerHTML = '';
+          }
         };
 
         SOCIAL_PLATFORMS.forEach((plat) => {
@@ -999,22 +1065,39 @@
               <span class="w-2 h-2 rounded-full shrink-0" style="background-color: ${plat.color}"></span>
               <span class="truncate">${plat.label}</span>
             </label>
-            <div class="flex items-center bg-white rounded-lg border border-slate-300 focus-within:border-pink-500 px-2 py-1 shadow-inner transition">
+            <div class="flex items-center bg-white rounded-lg border border-slate-300 focus-within:border-pink-500 focus-within:ring-1 focus-within:ring-pink-200 px-2 py-1 shadow-inner transition">
               <input
                 type="text"
                 value="${val.replace(/"/g, '&quot;')}"
-                placeholder="${plat.placeholder}"
+                placeholder="Ketik ${plat.placeholder}..."
                 class="w-full bg-transparent text-[10px] font-semibold text-slate-900 placeholder-slate-400 focus:outline-none min-w-0"
                 data-plat-id="${plat.id}"
               />
+              <button type="button" class="btn-clear-sos ${val ? '' : 'hidden'} text-slate-400 hover:text-rose-600 ml-1 text-[10px] font-bold cursor-pointer shrink-0" title="Hapus">✕</button>
             </div>
           `;
           const inp = wrap.querySelector('input');
+          const clrBtn = wrap.querySelector('.btn-clear-sos');
+
           inp.oninput = (e) => {
             state.sosmedAccounts[plat.id] = e.target.value;
+            if (e.target.value.trim().length > 0 && !state.sosmedEnabled) {
+              state.sosmedEnabled = true;
+              chkSos.checked = true;
+            }
+            clrBtn.classList.toggle('hidden', !e.target.value);
             persistLocks();
             refreshSosmedBadge();
           };
+
+          clrBtn.onclick = () => {
+            state.sosmedAccounts[plat.id] = '';
+            inp.value = '';
+            clrBtn.classList.add('hidden');
+            persistLocks();
+            refreshSosmedBadge();
+          };
+
           sosInputsGrid.appendChild(wrap);
         });
 
@@ -1023,7 +1106,7 @@
           const isPosSelected = state.sosmedPosition === pos.id;
           const posBtn = document.createElement('button');
           posBtn.type = 'button';
-          posBtn.className = `py-1 px-1 rounded-lg border text-[9px] font-bold transition cursor-pointer text-center truncate ${
+          posBtn.className = `py-1 px-1.5 rounded-lg border text-[9px] font-bold transition cursor-pointer text-center truncate ${
             isPosSelected
               ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white border-pink-600 shadow-sm'
               : 'bg-slate-50 hover:bg-white text-slate-700 border-slate-200 hover:border-pink-300'
@@ -1047,7 +1130,27 @@
           state.sosmedLocked = !state.sosmedLocked;
           persistLocks();
           renderWatermarkAndSosmedCards();
-          showPresetToast(state.sosmedLocked ? 'Sosmed dikunci permanen!' : 'Sosmed dibuka.');
+          showPresetToast(state.sosmedLocked ? 'Nama Sosmed dikunci & disimpan otomatis!' : 'Kunci Sosmed dibuka.');
+        };
+
+        sosCard.querySelector('#btn-sync-sosmed').onclick = () => {
+          const firstFilled =
+            state.sosmedAccounts.ig ||
+            state.sosmedAccounts.tiktok ||
+            state.sosmedAccounts.yt ||
+            state.sosmedAccounts.fb ||
+            state.sosmedAccounts.wa ||
+            state.sosmedAccounts.web ||
+            '';
+          if (!firstFilled.trim()) return;
+          state.sosmedAccounts.ig = firstFilled;
+          state.sosmedAccounts.tiktok = firstFilled;
+          state.sosmedAccounts.yt = firstFilled;
+          state.sosmedAccounts.fb = firstFilled;
+          state.sosmedEnabled = true;
+          persistLocks();
+          renderWatermarkAndSosmedCards();
+          showPresetToast('Nama akun IG, TikTok, YouTube & FB disamakan!');
         };
 
         refreshSosmedBadge();
